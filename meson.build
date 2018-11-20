@@ -4,7 +4,7 @@ project(
     version: '5.2.1'
 )
 
-if meson.get_compiler('vala').version() < '0.40.0'
+if meson.get_compiler('vala').version().version_compare('<0.40.0')
     error('vala compiler version 0.40.0 or newer is required.')
 endif
 
