@@ -47,5 +47,8 @@ subdir('lib')
 subdir('demo')
 subdir('icons')
 subdir('po')
-subdir('doc')
+
+if get_option('documentation')
+    subdir('doc')
+endif
 
