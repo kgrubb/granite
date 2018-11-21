@@ -24,9 +24,6 @@ executable(
 
     dependencies: [libgranite_dep],
 
-    include_directories: [include_directories('../lib')],
-
-    link_with: libgranite,
     install: true,
 )
 

@@ -115,6 +115,7 @@ custom_target(
 libgranite_dep = declare_dependency(
     link_with: libgranite,
     dependencies: libgranite_deps,
+    include_directories: [include_directories('.')],
 )
 
 # generate pkgconfig file
