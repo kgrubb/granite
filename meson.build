@@ -25,18 +25,22 @@ else
     vala_os_arg = []
 endif
 
+glib_min_version = '2.50'
 add_project_arguments(
     vala_os_arg,
     '--abi-stability',
     '--hide-internal',
-    '--target-glib=2.50',
+    '--target-glib='+glib_min_version,
     '--thread',
     language: ['vala']
 )
 
 libgranite_deps = [
     dependency('gee-0.8'),
-    dependency('gio-unix-2.0'),
+    dependency('glib-2.0', version: '>='+glib_min_version),
+    dependency('gobject-2.0', version: '>='+glib_min_version),
+    dependency('gio-2.0', version: '>='+glib_min_version),
+    dependency('gio-unix-2.0', version: '>='+glib_min_version),
     dependency('gtk+-3.0', version: '>=3.22'),
 ]
 
