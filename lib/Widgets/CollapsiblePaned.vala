@@ -76,8 +76,9 @@ namespace Granite.Widgets {
                     requested_position = 0;
                 }
 
+                // change requested_position back to be non-relative
                 if (collapse_mode == CollapseMode.LAST)
-                    requested_position = max_position - requested_position; // change requested_position back to be non-relative
+                    requested_position = max_position - requested_position;
 
                 set_position (requested_position);
 

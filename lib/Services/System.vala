@@ -186,7 +186,8 @@ namespace Granite.Services {
          * Returns whether history is enabled within the Security and Privacy system settings or not. A value of true
          * means that you should store information such as the last opened file or a history within the app.
          *
-         * Checks the "remember_recent_files" key in "org.gnome.desktop.privacy", returning true if the schema does not exist.
+         * Checks the "remember_recent_files" key in "org.gnome.desktop.privacy",
+         * returning true if the schema does not exist.
          */
         public static bool history_is_enabled () {
             if (privacy_settings_schema == null) {

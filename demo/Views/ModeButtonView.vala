@@ -39,7 +39,7 @@ public class ModeButtonView : Gtk.Grid {
         text_mode.append_text ("Foo");
         text_mode.append_text ("Bar");
 
-        var clear_button = new Gtk.Button.with_label("Clear Selected");
+        var clear_button = new Gtk.Button.with_label ("Clear Selected");
 
         var mode_switch_label = new Gtk.Label ("ModeSwitch");
         mode_switch_label.halign = Gtk.Align.START;

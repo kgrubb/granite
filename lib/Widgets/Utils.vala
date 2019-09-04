@@ -70,8 +70,7 @@ public enum Granite.TextStyle {
  * An enum used to derermine where the window manager currently displays its close button on windows.
  * Used with {@link Granite.Widgets.Utils.get_default_close_button_position}.
  */
-public enum Granite.CloseButtonPosition
-{
+public enum Granite.CloseButtonPosition {
     LEFT,
     RIGHT
 }
@@ -163,7 +162,8 @@ public static string accel_to_string (string accel) {
 }
 
 /**
- * Takes a description and an array of accels and returns {@link Pango} markup for use in a {@link Gtk.Tooltip}. This method uses {@link Granite.accel_to_string}.
+ * Takes a description and an array of accels and returns {@link Pango} markup
+ * for use in a {@link Gtk.Tooltip}. This method uses {@link Granite.accel_to_string}.
  *
  * Example:
  *
@@ -174,7 +174,8 @@ public static string accel_to_string (string accel) {
  *
  * @param description a standard tooltip text string
  *
- * @return {@link Pango} markup with the description label on one line and a list of human-readable accels on a new line
+ * @return {@link Pango} markup with the description label on one line and a list
+ * of human-readable accels on a new line
  */
 public static string markup_accel_tooltip (string[]? accels, string? description = null) {
     string[] parts = {};
@@ -182,7 +183,7 @@ public static string markup_accel_tooltip (string[]? accels, string? description
         parts += description;
     }
 
-    if (accels != null &&  accels.length > 0) {
+    if (accels != null && accels.length > 0) {
         string[] unique_accels = {};
 
         for (int i = 0; i < accels.length; i++) {
@@ -240,11 +241,15 @@ private static double sanitize_color (double color) {
 }
 
 /**
- * Takes a {@link Gdk.RGBA} background color and returns a suitably-contrasting foreground color, i.e. for determining text color on a colored background. There is a slight bias toward returning white, as white generally looks better on a wider range of colored backgrounds than black.
+ * Takes a {@link Gdk.RGBA} background color and returns a suitably-contrasting
+ * foreground color, i.e. for determining text color on a colored background.
+ * There is a slight bias toward returning white, as white generally looks better
+ * on a wider range of colored backgrounds than black.
  *
  * @param bg_color any {@link Gdk.RGBA} background color
  *
- * @return a contrasting {@link Gdk.RGBA} foreground color, i.e. white ({ 1.0, 1.0, 1.0, 1.0}) or black ({ 0.0, 0.0, 0.0, 1.0}).
+ * @return a contrasting {@link Gdk.RGBA} foreground color,
+ * i.e. white ({ 1.0, 1.0, 1.0, 1.0}) or black ({ 0.0, 0.0, 0.0, 1.0}).
  */
 public static Gdk.RGBA contrasting_foreground_color (Gdk.RGBA bg_color) {
     Gdk.RGBA gdk_white = { 1.0, 1.0, 1.0, 1.0 };
@@ -278,13 +283,14 @@ public static Gdk.RGBA contrasting_foreground_color (Gdk.RGBA bg_color) {
  */
 namespace Granite.Widgets.Utils {
     /**
-     * Applies colorPrimary property to the window. The colorPrimary property currently changes
-     * the color of the {@link Gtk.HeaderBar} and it's children so that the application window
-     * can have a so-called "brand color".
+     * Applies colorPrimary property to the window. The colorPrimary property
+     * currently changes the color of the {@link Gtk.HeaderBar} and it's children
+     * so that the application window can have a so-called "brand color".
      *
      * Note that this currently only works with the default stylesheet that elementary OS uses.
      *
-     * @param window the widget to apply the color, for most cases the widget will be actually the {@link Gtk.Window} itself
+     * @param window the widget to apply the color, for most cases the widget
+     * will be actually the {@link Gtk.Window} itself.
      * @param color the color to apply
      * @param priority priorty of change, by default {@link Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION}
      *
@@ -327,7 +333,8 @@ namespace Granite.Widgets.Utils {
      * Applies a stylesheet to the given //screen//. This will affect all the
      * widgets which are part of that screen.
      *
-     * @param screen screen to apply style to, use {@link Gtk.Widget.get_screen} in order to get the screen that the widget is on
+     * @param screen screen to apply style to, use {@link Gtk.Widget.get_screen}
+     * in order to get the screen that the widget is on
      * @param stylesheet CSS style to apply to screen
      * @param priority priorty of change, for most cases this will be {@link Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION}
      *
@@ -451,7 +458,8 @@ namespace Granite.Widgets.Utils {
      * to the default gnome one. If neither is available, null is returned. Make sure to check for this case,
      * as otherwise your program may crash on startup.
      *
-     * @return the schema name. If the layout could not be determined, a warning will be thrown and null will be returned
+     * @return the schema name. If the layout could not be determined, a warning
+     * will be thrown and null will be returned
      */
     public string? get_button_layout_schema () {
         var sss = SettingsSchemaSource.get_default ();

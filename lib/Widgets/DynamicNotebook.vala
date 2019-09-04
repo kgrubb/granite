@@ -53,7 +53,7 @@ namespace Granite.Widgets {
     public class Tab : Gtk.EventBox {
         Gtk.Label _label;
         public string label {
-            get { return _label.label;  }
+            get { return _label.label; }
 
             set {
                 _label.label = value;
@@ -139,7 +139,7 @@ namespace Granite.Widgets {
 
         internal Gtk.Image _icon;
         public GLib.Icon? icon {
-            owned get { return _icon.gicon;  }
+            owned get { return _icon.gicon; }
             set { _icon.gicon = value; }
         }
 
@@ -233,7 +233,7 @@ namespace Granite.Widgets {
 
             _working = new Gtk.Spinner ();
             _working.set_size_request (16, 16);
-            _working.start();
+            _working.start ();
 
             var close_button = new Gtk.Button.from_icon_name ("window-close-symbolic", Gtk.IconSize.MENU);
             close_button.tooltip_text = _("Close Tab");
@@ -307,7 +307,7 @@ namespace Granite.Widgets {
             this.button_press_event.connect ((e) => {
                 if (e.button == 2) {
                     e.state &= MODIFIER_MASK;
-                    if  (e.state == 0) {
+                    if (e.state == 0) {
                         this.closed ();
                     } else if (e.state == Gdk.ModifierType.SHIFT_MASK) {
                         this.close_others ();
@@ -421,7 +421,7 @@ namespace Granite.Widgets {
         private Gee.LinkedList<Entry?> closed_tabs;
 
         public ClosedTabs () {
-            
+
         }
 
         construct {
@@ -529,7 +529,7 @@ namespace Granite.Widgets {
          * Hide the tab bar and only show the pages
          */
         public bool show_tabs {
-            get { return notebook.show_tabs;  }
+            get { return notebook.show_tabs; }
             set { notebook.show_tabs = value; }
         }
 
@@ -930,11 +930,11 @@ namespace Granite.Widgets {
             });
 
             destroy.connect (() => {
-		        notebook.switch_page.disconnect (on_switch_page);
-		        notebook.page_added.disconnect (on_page_added);
-		        notebook.page_removed.disconnect (on_page_removed);
-		        notebook.page_reordered.disconnect (on_page_reordered);
-		        notebook.create_window.disconnect (on_create_window);
+            notebook.switch_page.disconnect (on_switch_page);
+            notebook.page_added.disconnect (on_page_added);
+            notebook.page_removed.disconnect (on_page_removed);
+            notebook.page_reordered.disconnect (on_page_reordered);
+            notebook.create_window.disconnect (on_create_window);
             });
 
             notebook.switch_page.connect (on_switch_page);
@@ -1132,7 +1132,7 @@ namespace Granite.Widgets {
                 i = this.notebook.insert_page (tab.page_container, tab, index);
 
             this.notebook.set_tab_reorderable (tab.page_container, this.allow_drag);
-            this.notebook.set_tab_detachable  (tab.page_container, this.allow_new_window);
+            this.notebook.set_tab_detachable (tab.page_container, this.allow_new_window);
 
             tab.duplicate_m.visible = allow_duplication;
             tab.new_window_m.visible = allow_new_window;
@@ -1199,7 +1199,7 @@ namespace Granite.Widgets {
         }
 
         private void on_close_others_right (Tab clicked_tab) {
-            var is_to_the_right = false; 
+            var is_to_the_right = false;
 
             tabs.copy ().foreach ((tab) => {
                 if (is_to_the_right) {
